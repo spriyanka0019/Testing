@@ -1,0 +1,18 @@
+-------------------------------Parameters 21/12/2019------------------------------------
+BatteryPercentage "40%"
+CarID "StromR3"
+DistanceTravelled "12355"
+GPSDate "12/21/2019"
+GPSLocation [19.3179679° N, 72.8923427° E]
+ServerTimeStamp December 21, 2019 at 2:09:00 PM UTC+5:30
+TripID "T1"
+----------------------------------------------------------------------------------------
+-------------------------------Parameters 30/12/2019-----------------------------------
+Parameters           datatype   value
+BatterySOC             int       10
+DistanceTravelled      int       2446
+TripID                 int        1 (increases in sequential order)
+---------------------------------------------------------------------------------------
+
+
+

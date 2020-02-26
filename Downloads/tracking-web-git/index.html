@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Firestore</title>
+     <link rel="stylesheet" href="styles.css">
+
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
+    
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+
+    <script type="text/javascript" src="date.js"></script>
+
+    
+<style>
+  /* Always set the map height explicitly to define the size of the div
+   * element that contains the map. */
+  #map {
+    height: 90%;
+  }
+  /* Optional: Makes the sample page fill the window. */
+  html, body {
+    height: 90%;
+    margin: 20;
+    padding: 20;
+  }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+  float: left;
+  width: 70%;
+  height: 700px; /* only for demonstration, should be removed */
+  background: #fff;
+  padding: 0px;
+}
+
+/* Style the list inside the menu */
+/* nav ul {
+  list-style-type: none;
+  padding: 0;
+} */
+
+ul {
+  list-style-type: none;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 20%;
+  margin-left:20px;
+  background-color: #fff;
+  margin-top: 110px;
+  height: 700px; /* only for demonstration, should be removed */
+}
+
+.content{
+  margin-top:10px;
+  background-color:#00D3;
+  width:400px;
+  height:100px;
+}
+
+/* Clear floats after the columns */
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+  background-color: #fff;
+
+}
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+}
+
+
+.event a {
+    background-color: #5FBA7D !important;
+    color: #ffffff !important;
+}
+
+</style>
+</head>
+
+
+    
+<body>
+ 
+   <section>
+    <nav>
+    <h1 align="center">Fleet Tracking</h1>
+    <!-- <input type="text" placeholder="Car ID" id="txtCarID" />
+    <input type="text" placeholder="Trip ID" id="txtTripID" />
+    <input type="text" placeholder="Latitude" id="txtLat" />
+    <input type="text" placeholder="Longitude" id="txtLon" /> -->
+    <!-- <button id="bttAdd" >Add</button> -->
+    <br>
+    <!-- <input type="text" placeholder="Car ID" id="rtxtCarID" />
+    <!-- <input type="text" placeholder="Trip ID" id="rtxtTripID" /> -->
+      <!-- <input type="text" placeholder="Date" id="rtxtTripsDate" />
+    <button id="bttRetrive">Retrive</button> --> 
+    <script src="index.js"></script>
+    <br><br> 
+    <!--Google Map-->
+    <div id="map"></div>
+    <script src="index.js"></script>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 19.075983, lng: 72.877655},
+          zoom: 8
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIT1xRc1G9-g_mrDcBtBbNfANoPuKcDpM&callback=initMap"
+    async defer></script>
+
+    </nav>
+
+    <article>
+        <div>
+       <b>Enter Car ID</b>
+        <br></br>
+        <div>
+        <input type="text" placeholder="CAR ID" id="textcarID" size="10" /> 
+        <button id="bttShowTrips" > >>  </button>
+        <br></br>
+        <br></br>
+
+        <div id="datepicker"></div>
+        <br></br>
+         </div>
+    
+       <br></br>
+        <div id="dvTable">
+          <p ><b> <span id='popup'><span> </b></p>
+           <p > SoC: <span id='battery'></span></p>
+           <p > Odometer: <span id='odometer'></span></p>
+           <p > Distance Covered: <span id='distance'></span></p>
+           <p > EnergyConsumption: <span id='energyconsume'></span></p>
+
+
+        </div>
+
+
+    </div>
+
+   
+  </article>
+  </section>
+</body>
+
+
+</html>
